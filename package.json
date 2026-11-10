@@ -1,0 +1,26 @@
+{
+  "name": "twitter24-admin",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Witter24 admin panel (React) - frontend for the twitter24_node_be /api/admin REST API",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.4",
+    "react-dom": "^18.3.1",
+    "react-perfect-scrollbar": "^1.5.8",
+    "react-router-dom": "^6.28.0",
+    "react-toastify": "^10.0.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "sass": "^1.64.2",
+    "vite": "^5.4.11"
+  }
+}

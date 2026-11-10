@@ -1,0 +1,303 @@
+/**  =====================
+      Authentication css start
+==========================  **/
+
+.auth-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //overflow: hidden;
+  min-width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  //background-image: url('/assets/images/bg3.jpg'); 
+  // background-size: cover;
+  //background-position: center;
+  //background-repeat: no-repeat;
+  //background-color: rgba(1, 137, 201, 0.671);  
+  //background-blend-mode: overlay;
+  
+  a,
+  p > a {
+    color: $theme-heading-color;
+    font-weight: 600;
+  }
+  .btn-auth-gen {
+    .btn-icon {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 45px;
+
+      small {
+        font-size: 15px;
+      }
+    }
+  }
+  .input-group {
+    background: transparent;
+  }
+  .card {
+    margin-bottom: 0;
+  }
+
+  > div {
+    z-index: 5;
+  }
+
+  .auth-content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    &.multyform,
+    &.subscribe {
+      width: 750px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    max-width: 70%;
+    .image-slider {
+     display: none;
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    .card {
+      .card-body {
+        padding: 30px 15px;
+      }
+    }
+  }
+  .card-body{
+    width: 70%;
+    height: 100%;
+  }
+
+  .auth-icon {
+    font-size: 30px;
+    &:before {
+      background: $theme-color;
+      background-clip: inherit;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    color: #1dcae0;
+  }
+
+  &.offline {
+    background-image: none;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .auth-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+    z-index: -1; /* Ensure the background is behind other content */
+  }
+  
+  /*.auth-wrapper {
+    position: relative;
+    min-height: 100vh; /* Ensure the wrapper covers the full viewport height *
+  }
+  
+  .auth-content {
+    position: relative;
+    z-index: 1; /* Ensure content is above the background *
+  }*/
+  
+ /*.auth-bg {
+    .r {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+
+      &:first-child {
+        top: -100px;
+        right: -100px;
+        background: $theme-color;
+      }
+
+      &:last-child {
+        left: -100px;
+        bottom: -100px;
+        background: $theme-color2;
+      }
+
+      &.s {
+        width: 20px;
+        height: 20px;
+        &:nth-child(2) {
+          top: 150px;
+          right: -150px;
+          background: $primary-color;
+        }
+
+        &:nth-child(3) {
+          left: -150px;
+          bottom: 150px;
+          background: $success-color;
+        }
+      }
+
+      &:nth-child(odd) {
+        animation: floating 7s infinite;
+      }
+
+      &:nth-child(even) {
+        animation: floating 9s infinite;
+      }
+    }
+  }*/
+}
+/* image variant start */
+.aut-bg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.aut-bg-img-side {
+  p {
+    line-height: 2;
+  }
+}
+.aut-bg-img,
+.aut-bg-img-side {
+  .custom-select,
+  .form-control {
+    background: transparent;
+  }
+}
+.auth-tabs {
+  .tab-content {
+    overflow: hidden;
+    position: relative;
+    .tab-pane > * {
+      position: relative;
+      z-index: 5;
+    }
+    .auth-icon {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 180px;
+      transform: rotate(-30deg);
+      z-index: 1;
+      opacity: 0.2;
+    }
+  }
+}
+
+/* image varient start */
+@keyframes floating {
+  from {
+    transform: rotate(0deg) translate(-10px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translate(-10px) rotate(-360deg);
+  }
+}
+.image-slider {
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  //position: relative;
+  
+  .slider-images {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    height: 100%;
+    width: 100%; 
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 0; // Hide all slides initially
+      z-index: 1; // Ensure all slides are beneath the active one
+      
+      &.active {
+        opacity: 1; // Show the active slide
+        z-index: 2; // Ensure the active slide is on top
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover; 
+      }
+
+      .color-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(1, 106, 197, 0.678); // Semi-transparent black overlay
+        z-index: 1; // Ensure this overlay is below the text overlay
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 20px; // Adjust as needed
+        left: 50%;
+        transform: translateX(-50%);
+       // background: rgba(0, 0, 0, 0.3); // Semi-transparent background
+        color: white;
+        padding: 10px;
+        width: 70%;
+        border-radius: 8px;
+        z-index: 2;
+        .verse{
+          font-size: 14px;
+        }
+        .chapter{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  
+
+  .slider-dots {
+    text-align: center;
+    position: absolute;
+    bottom: 3%;
+    left:22%;
+    z-index: 100;
+    .dot {
+      display: inline-block;
+      width: 50px;
+      height: 3px;
+      margin: 0 5px;
+      background-color: rgba(0, 0, 0, 0.308);
+      border-radius: 10px;
+      cursor: pointer;
+
+      &.active {
+        background-color: white;
+      }
+    }
+  }
+}
+
+
+/**====== Authentication css end ======**/
